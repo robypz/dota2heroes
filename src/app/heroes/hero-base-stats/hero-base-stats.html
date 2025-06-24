@@ -1,1 +1,46 @@
-<p>hero-base-stats works!</p>
+<div class="bg-gray-800 border-1 border-gray-700 rounded-lg p-4">
+  <header class="flex align-center items-center">
+    <svg class="w-8 h-8 text-gray-800 dark:text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+      width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 20a16.405 16.405 0 0 1-5.092-5.804A16.694 16.694 0 0 1 5 6.666L12 4l7 2.667a16.695 16.695 0 0 1-1.908 7.529A16.406 16.406 0 0 1 12 20Z" />
+    </svg>
+    <h2 class="text-2xl text-gray-100 font-bold">
+
+      Base Stats</h2>
+  </header>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="flex place-content-between">
+      <div class="text-gray-100 text-md">
+        Strengt:
+      </div>
+      <div class="text-red-500">
+        {{hero.base_str}}
+      </div>
+    </div>
+    <div class="flex place-content-between">
+      <div class="text-gray-100 text-md">Healt</div>
+      <div class="text-red-400">{{hero.base_health}}</div>
+    </div>
+
+    <div class="flex place-content-between">
+      <div class="text-gray-100 text-md">Intelligence:</div>
+      <div class="text-blue-500">{{hero.base_int}}</div>
+    </div>
+    <div class="flex place-content-between">
+      <div class="text-gray-100 text-md">Mana:</div>
+      <div class="text-blue-400">{{hero.base_mana}}</div>
+    </div>
+
+    <div class="flex place-content-between">
+      <div class="text-gray-100 text-md">Agility</div>
+      <div class="text-green-500">{{hero.base_agi}}</div>
+    </div>
+    <div class="flex place-content-between">
+      <div class="text-gray-100 text-md">Attack Speed</div>
+      <div class="text-green-400">{{hero.base_attack_min +' - '+hero.base_attack_max}}</div>
+    </div>
+
+
+  </div>
+</div>

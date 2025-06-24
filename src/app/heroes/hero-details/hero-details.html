@@ -14,8 +14,8 @@
     <div class="relative bg-gray-100 rounded-lg shadow-sm dark:bg-gray-900">
       <!-- Modal header -->
       <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-          Hero name
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          {{hero.localized_name}}
         </h3>
         <button (click)="hide()" type="button"
           class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -29,15 +29,15 @@
       </div>
       <!-- Modal body -->
       <div class="p-4 md:p-5 space-y-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
             <app-hero-portrait [_img]="hero.img" [_primary_attr]="hero.primary_attr"></app-hero-portrait>
             <app-hero-roles [_roles]="hero.roles"></app-hero-roles>
             <app-hero-lore [_name]="hero.name"></app-hero-lore>
           </div>
           <div>
-            <app-hero-base-stats></app-hero-base-stats>
-            <app-hero-base-skills></app-hero-base-skills>
+            <app-hero-base-stats [_hero]="hero"></app-hero-base-stats>
+            <app-hero-abilities [_name]="hero.name"></app-hero-abilities>
           </div>
         </div>
       </div>

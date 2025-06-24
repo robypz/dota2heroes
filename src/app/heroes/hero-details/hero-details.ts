@@ -5,11 +5,11 @@ import { HeroPortrait } from "../hero-portrait/hero-portrait";
 import { HeroLore } from "../hero-lore/hero-lore";
 import { HeroRoles } from "../hero-roles/hero-roles";
 import { HeroBaseStats } from "../hero-base-stats/hero-base-stats";
-import { HeroBaseSkills } from "../hero-base-skills/hero-base-skills";
+import { HeroAbilities } from "../hero-abilities/hero-abilities";
 
 @Component({
   selector: 'app-hero-details',
-  imports: [HeroPortrait, HeroLore, HeroRoles, HeroBaseStats, HeroBaseSkills],
+  imports: [HeroPortrait, HeroLore, HeroRoles, HeroBaseStats, HeroAbilities],
   templateUrl: './hero-details.html',
   styleUrl: './hero-details.scss'
 })
