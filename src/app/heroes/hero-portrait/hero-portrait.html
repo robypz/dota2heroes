@@ -1,0 +1,29 @@
+  @if (primary_attr && img) {
+  <div class="relative mb-3">
+    @switch (primary_attr) {
+    @case ('agi') {
+    <div
+      class=" hover:brightness-50 rounded rounded-full bg-green-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
+      Agility</div>
+    }
+    @case ('str') {
+    <div
+      class=" hover:brightness-50 rounded rounded-full bg-red-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
+      Strength</div>
+    }
+    @case ('int') {
+    <div
+      class=" hover:brightness-50 rounded rounded-full bg-blue-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
+      Intelligence</div>
+    }
+    @default {
+    <div
+      class=" hover:brightness-50 rounded rounded-full bg-yellow-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
+      Universal</div>
+    }
+
+    }
+    <img [src]="imageBaseUrl+img" alt="" class="rounded-lg w-1/1">
+  </div>
+  }
+

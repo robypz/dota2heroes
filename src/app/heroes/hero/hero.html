@@ -1,80 +1,9 @@
 <div (click)="selectHero()"
   class="bg-gray-800 p-4 border h-1/1 border-gray-600 rounded-lg hover:cursor-pointer hover:scale-[105%] transition-300 transition duration-300">
-  <div class="relative mb-3">
-    @switch (hero.primary_attr) {
-    @case ('agi') {
-    <div
-      class=" hover:brightness-50 rounded rounded-full bg-green-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
-      Agility</div>
-    }
-    @case ('str') {
-    <div
-      class=" hover:brightness-50 rounded rounded-full bg-red-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
-      Strength</div>
-    }
-    @case ('int') {
-    <div
-      class=" hover:brightness-50 rounded rounded-full bg-blue-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
-      Intelligence</div>
-    }
-    @default {
-    <div
-      class=" hover:brightness-50 rounded rounded-full bg-yellow-600 absolute top-0 right-0 me-2 mt-2 dark:text-gray-100 text-xs font-semibold py-1 text-center px-2">
-      Universal</div>
-    }
-
-    }
-    <img [src]="imageBaseUrl+hero.img" alt="" class="rounded-lg w-1/1">
-  </div>
+  <app-hero-portrait [_img]="hero.img" [_primary_attr]="hero.primary_attr"></app-hero-portrait>
   <h3 class="text-xl text-gray-100 font-semibold mb-3">{{hero.localized_name}}</h3>
-  <div class="min-h-[60px]">
-    <div class="flex  flex-wrap space-x-1 mb-3 ">
-      @for (role of hero.roles; track $index) {
-      @switch (role) {
-      @case ('Carry') {
-      <div class="rounded-full bg-yellow-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">
-        {{role}}</div>
-      }
-      @case ('Durable') {
-      <div class="rounded-full bg-green-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">{{role}}
-      </div>
-      }
-      @case ('Initiator') {
-      <div class="rounded-full bg-purple-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">
-        {{role}}
-      </div>
-      }
-      @case ('Nuker') {
-      <div class="rounded-full bg-orange-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">
-        {{role}}
-      </div>
-      }
-      @case ('Disabler') {
-      <div class="rounded-full bg-red-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">{{role}}
-      </div>
-      }
-      @case ('Pusher') {
-      <div class="rounded-full bg-yellow-300 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">
-        {{role}}
-      </div>
-      }
-      @case ('Escape') {
-      <div class="rounded-full bg-cyan-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">{{role}}
-      </div>
-      }
-      @case ('Support') {
-      <div class="rounded-full bg-pink-500 px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">{{role}}
-      </div>
-      }
-      @default {
-      <div class="rounded-full bg-black px-2 text-gray-100 text-xs text-center py-[2px] font-semibold mb-1">{{role}}
-      </div>
-      }
 
-      }
-      }
-    </div>
-  </div>
+  <app-hero-roles [_roles]="hero.roles"></app-hero-roles>
 
   <div class="flex justify-around text-sm">
     <div class="text-center">

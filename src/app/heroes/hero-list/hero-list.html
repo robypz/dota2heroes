@@ -1,8 +1,8 @@
 <section class="p-4">
+  <app-hero-details [_hero]="hero"></app-hero-details>
   <div class="grid  grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
       @for (hero of heroes; track hero.id) {
-        <app-hero [_hero]="hero"></app-hero>
+        <app-hero [_hero]="hero" [(selectedHero)]="setHero"></app-hero>
       }
   </div>
-
 </section>
