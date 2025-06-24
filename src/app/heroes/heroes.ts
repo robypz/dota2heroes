@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { HeroList } from "./hero-list/hero-list";
 
 @Component({
@@ -8,5 +8,4 @@ import { HeroList } from "./hero-list/hero-list";
   styleUrl: './heroes.scss'
 })
 export class Heroes {
-
 }

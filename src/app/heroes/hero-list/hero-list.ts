@@ -17,7 +17,6 @@ export class HeroList {
     return this._heroes();
   }
 
-
   constructor() {
     this.heroService.heroList();
   }

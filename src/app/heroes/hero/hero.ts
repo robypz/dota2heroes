@@ -10,9 +10,13 @@ import { env } from '../../../../env';
 export class Hero {
   public _hero = input<HeroInterface>();
   public imageBaseUrl = env.apiHeroImageBaseUrl;
-
+  public selectedHero! : HeroInterface;
   public get hero() : HeroInterface {
     return this._hero() as HeroInterface;
   }
 
+  selectHero(){
+    this.selectedHero = this.hero;
+    console.log(this.selectedHero);
+  }
 }
