@@ -7,24 +7,35 @@
     </svg>
     <h2 class="text-2xl text-gray-100 font-bold">Abilities</h2>
   </header>
-
+  <div class="flex mb-4">
+    <div class="me-3">
+      <img [src]="imgbaseUrl+'/apps/dota2/images/dota_react/icons/innate_icon.png'" alt="" srcset=""
+        class="rounded-lg min-w-25">
+    </div>
+    <div>
+      <h3 class="text-xl text-gray-100 font-semibold">{{innateAbility.dname}}</h3>
+      <p class="text-gray-100">{{innateAbility.desc}}</p>
+    </div>
+  </div>
   @if (heroAbilities && abilities) {
-    @for (heroAbility of heroAbilities; track $index) {
-      @if (heroAbility) {
-        <div class="flex mb-4">
-          <div class="me-3">
-            @if (abilities[heroAbility].is_innate) {
-              <img [src]="imgbaseUrl+'/apps/dota2/images/dota_react/icons/innate_icon.png'" alt="" srcset="" class="rounded-lg min-w-25">
-            }@else {
-              <img [src]="imgbaseUrl+abilities[heroAbility].img" alt="" srcset="" class="rounded-lg min-w-25">
-            }
-          </div>
-          <div>
-            <h3 class="text-xl text-gray-100 font-semibold">{{abilities[heroAbility].dname}}</h3>
-            <p class="text-gray-100">{{abilities[heroAbility].desc}}</p>
-          </div>
-        </div>
+  @for (heroAbility of heroAbilities; track $index) {
+  @if (!abilities[heroAbility].is_innate) {
+  <div class="flex mb-4">
+    <div class="me-3">
+      @if (abilities[heroAbility].is_innate) {
+      <img [src]="imgbaseUrl+'/apps/dota2/images/dota_react/icons/innate_icon.png'" alt="" srcset=""
+        class="rounded-lg min-w-25">
+      }@else {
+      <img [src]="imgbaseUrl+abilities[heroAbility].img" alt="" srcset="" class="rounded-lg min-w-25">
       }
-    }
+    </div>
+    <div>
+      <h3 class="text-xl text-gray-100 font-semibold">{{abilities[heroAbility].dname}}</h3>
+      <p class="text-gray-100">{{abilities[heroAbility].desc}}</p>
+    </div>
+  </div>
+  }
+
+  }
   }
 </div>

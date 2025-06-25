@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, effect, inject, input } from '@angular/core';
 import { AbilityService } from './shared/ability-service';
 import { Abilities as AbilitiesInterface, Ability } from './shared/abilities';
 import { env } from '../../../env';
@@ -27,6 +27,15 @@ export class Abilities {
   }
 
   constructor(){
+    effect(()=>{
+      if (this.heroAbilities && this.abilities)  {
+        this.heroAbilities.forEach(heroAbility => {
+          if (this.abilities[heroAbility].is_innate) {
+            this.innateAbility = this.abilities[heroAbility];
+          }
+        });
+      }
+    })
   }
 
 }

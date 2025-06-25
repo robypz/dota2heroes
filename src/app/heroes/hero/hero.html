@@ -1,4 +1,4 @@
-<div (click)="selectHero()"
+<div (click)="selectHero()" data-modal-target="default-modal" data-modal-toggle="default-modal"
   class="bg-gray-800 p-4 border h-1/1 border-gray-600 rounded-lg hover:cursor-pointer hover:scale-[105%] transition-300 transition duration-300">
   <app-hero-portrait [_img]="hero.img" [_primary_attr]="hero.primary_attr"></app-hero-portrait>
   <h3 class="text-xl text-gray-100 font-semibold mb-3">{{hero.localized_name}}</h3>

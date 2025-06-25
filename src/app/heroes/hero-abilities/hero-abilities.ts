@@ -2,6 +2,7 @@ import { Component, computed, inject, input } from '@angular/core';
 import { HeroAbilitiesService } from './shared/hero-abilities-service';
 import { HeroAbilities as  HeroAbilitiesInterface} from './shared/hero-abilities';
 import { Abilities } from "../../abilities/abilities";
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-hero-abilities',

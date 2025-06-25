@@ -18,6 +18,6 @@ export class Hero {
   }
 
   selectHero(){
-    this.selectedHero.set(this.hero);
+    this.selectedHero.set({ ...this.hero });
   }
 }

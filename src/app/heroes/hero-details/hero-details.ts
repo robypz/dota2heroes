@@ -27,9 +27,9 @@ export class HeroDetails implements OnInit {
 
   constructor(){
     effect(()=>{
-      if (this._hero()) {
-        this.show();
-      }
+        if (this.hero) {
+          this.show();
+        }
     });
   }
 
@@ -43,6 +43,7 @@ export class HeroDetails implements OnInit {
   }
 
   hide(){
-    this.modal.hide()
+    (document.activeElement as HTMLElement)?.blur();
+    this.modal.toggle()
   }
 }

@@ -1,1 +1,3 @@
-<app-abilities [_heroAbilities]="heroAbilities[name].abilities"></app-abilities>
+@if (heroAbilities) {
+  <app-abilities [_heroAbilities]="heroAbilities[name].abilities"></app-abilities>
+}
