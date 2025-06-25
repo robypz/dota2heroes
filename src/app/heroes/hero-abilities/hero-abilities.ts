@@ -1,11 +1,10 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { HeroAbilitiesService } from './shared/hero-abilities-service';
 import { HeroAbilities as  HeroAbilitiesInterface} from './shared/hero-abilities';
-import { Abilities } from "../../abilities/abilities";
 
 @Component({
   selector: 'app-hero-abilities',
-  imports: [Abilities],
+  imports: [],
   templateUrl: './hero-abilities.html',
   styleUrl: './hero-abilities.scss'
 })
